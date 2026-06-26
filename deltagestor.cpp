@@ -1,10 +1,11 @@
 //Deltag code property
 #include <filesystem>
+#include <stdexcept>
 #include <iostream>
 #include <cstdlib>
 #include <string>
   namespace fs = std::filesystem;
-std::string ruta = "none";
+std::string rute = "none";
 //rute is BASSICALLY ALL DELTAGESTOR PLEASE DONT CHANGE THE ROUTE OR DELTA GESTOR WILL DIEEEEEEEE!
 void calculator(){
   std::string tipo = "+";
@@ -42,32 +43,32 @@ void log(std::string text){
     void delete_(){
     	       
     	       log("what will you delete?");
-	       std::cin >> ruta;
+	       std::cin >> rute;
 	       try{
-	           if(fs::remove(ruta)){
+	           if(fs::remove(rute)){
 	               log("file deleted succesfull ex 913");
 	               }
 	           else{ 
-	           throw "err";
+	           throw std::runtime_error("err");
 	           }
-	           }catch(const char* e){
-	               log("console error file does not exist, error 214");
-	           }
+	           }catch (const std::exception& e) {
+    log("Console error: " + std::string(e.what()));
+}
     }
     void deleteevery_(){
     	       
     	       log("what will you delete?");
-	       std::cin >> ruta;
+	       std::cin >> rute;
 	       try{
-	           if(fs::remove_all(ruta)){
+	           if(fs::remove_all(rute)){
 	               log("file deleted succesfull ex 913");
 	               }
 	           else{ 
-	           throw "err";
+	           throw std::runtime_error("err");
 	           }
-	           }catch(const char* e){
-	               log("console error file does not exist, error 214");
-	           }
+	           }catch (const std::exception& e) {
+    log("Console error: " + std::string(e.what()));
+}
     }
 
 int main(int argc, char *argv[]) //CALLER IS HEEEERE
@@ -86,17 +87,18 @@ delete_();
 	           }
 	           if(acc == "create"){
 	              log("name your repository");
-	              std::cin >> ruta;
+	              std::cin >> rute;
 	              try{
-	               if(fs::create_directory(ruta)){
+	               if(fs::create_directory(rute)){
 	                   log("created succesfully");
 	                   }
 	                   else{
-	                       throw "err";
+	                       throw std::runtime_error("err");
 	                       }
 	                       
-	               }catch(const char* e){log("firectory not created error 901");
-	               }
+	               }catch (const std::exception& e) {
+    log("Console error: " + std::string(e.what()));
+}
 	           }
 	           if(acc == "calculate"){
 	               t = false;
