@@ -6,26 +6,26 @@
 #include <string>
   namespace fs = std::filesystem;
 std::string rute = "none";
-//rute is BASSICALLY ALL DELTAGESTOR PLEASE DONT CHANGE THE ROUTE OR DELTA GESTOR WILL DIEEEEEEEE!
+//rute is a global variable can be changed by anything i know this is bad practive is just to void's before main can use it
 void calculator(){
-  std::string tipo = "+";
-  double resultado = 0;
+  std::string type = "+";
+  double answer = 0;
   double n1 = 0.0000;
   double n2 = 0.0000;
   std::cin >> n1;
   std::cin >> n2;
-  std::cin >> tipo;
-  if (tipo == "+"){
-  resultado = n1 + n2;}
-  else if (tipo == "×" || tipo == "*" || tipo == "x" ){
-      resultado = n1 * n2;}
-      else if(tipo == "-"){
-          resultado = n1 - n2;}
-          else if(tipo == "÷" || tipo == "/" ){
-              resultado = n1 / n2;}
-  std::cout << resultado << std::endl;
+  std::cin >> type;
+  if (type == "+"){
+  answer = n1 + n2;}
+  else if (type == "×" || type == "*" || type == "x" ){
+      answer = n1 * n2;}
+      else if(type== "-"){
+          answer = n1 - n2;}
+          else if(type == "÷" || type == "/" ){
+              answer = n1 / n2;}
+  std::cout << answer << std::endl;
 }
-//GOTCHA FOR YOUR HOMEWORK BUDDY YOUR POOR CALCULATOR IS UP FROM VOID TO } AJAJAJJAJAJA
+//here is calculator an extra fuction!
 void log(std::string text){
     std::cout << text << std::endl;
     }
@@ -39,7 +39,7 @@ void log(std::string text){
        log("write cls for clean all the console");
        log("---------------------------‐--------------------------");
         }
-    //HEY GOTCHA YOU DONT KNOW COMMANDS FROM DELTA MAGIC AND ""BETTER"" GESTOR THERE THE ARE
+    //help menu! write help to get this menu in console
     void delete_(){
     	       
     	       log("what will you delete?");
@@ -71,7 +71,7 @@ void log(std::string text){
 }
     }
 
-int main(int argc, char *argv[]) //CALLER IS HEEEERE
+int main(int argc, char *argv[]) //main inits!
 {
 	
 	bool t = true;
@@ -79,7 +79,7 @@ int main(int argc, char *argv[]) //CALLER IS HEEEERE
 	log("delta gestor, in cpp (write help to get commands indications)");
 	while(t){
 	    std::cin >> acc;
-	    //BLAH BLAH BLAH DELETE
+	    //this is actually delete fuction in where if statements live
 	    if(acc == "delete"){
 	       t = false;
 delete_();
@@ -110,11 +110,13 @@ delete_();
 	                   }
 	                   if(acc == "cls"){
 	                       system("cls");
-	                       log("Deltagestor (console cleared)");//YEEE NO MORE TRASH CLEAN CONSOLE
+	                       log("Deltagestor (console cleared)");
+	                       //this line actually deletes console trash is you are on Windows write cls and Linux clear
 	                   }
 	                   if(acc == "deletef"){
 	                       deleteevery_();
 	                   }
+	                   //if you gonna use deletf make sure of write the rutes good
 	                   if(acc == "help"){
 	                       help();
 	                   }
