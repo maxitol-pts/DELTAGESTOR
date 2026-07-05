@@ -15,6 +15,7 @@ deltagestor have fucnctions like:
 #help
 #clear
 
+
 **COMPATIBILITY**
 
 it can work in windows/linux/mac without problems the command clear automatically checks your device!
