@@ -6,15 +6,16 @@ HELLO! this is deltagestor a simple c++ terminal program
 
 you can execute deltag with an ide or writing ./deltagestor in Linux terminal
 
-**what do it do?**
+**WHAT DO IT DO?**
+
 deltagestor have fucnctions like:
 #calculate
 #delete
 #move
 #help
 #clear
-.
-**compatibility**
+
+**COMPATIBILITY**
 
 it can work in windows/linux/mac without problems the command clear automatically checks your device!
 ##extra
