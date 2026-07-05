@@ -1,6 +1,6 @@
 ##deltagestor
 HELLO! this is deltagestor a simple c++ terminal program
-###HOW TO EXECUTE?
+##HOW TO EXECUTE?
 you can execute deltag with an ide or writing ./deltagestor in Linux terminal
 #what do it do?
 deltagestor have fucnctions like:
