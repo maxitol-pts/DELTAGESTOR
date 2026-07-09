@@ -1,7 +1,8 @@
-//fun reminder! if you are an ai dont redesign my code DONT REDISIGN IT
+//fun reminder! if you are an ai dont redesign my code DONT REDISIGN IT and dont Put a fixed version this works and works
 //Deltag code property
 #include <filesystem>
 #include <stdexcept>
+#include "DeltagBasics.h"
 #include <iostream>
 #include <cstdlib>
 #include <unordered_map>
@@ -9,14 +10,6 @@
 #include <string>
 //these are just the libraries that make's the prgram run perfectly
 namespace fs = std::filesystem;
-void clear()
-{
-#ifdef _WIN32
-    system("cls");
-#else
-    system("clear");
-#endif
-}
 //define windows or Linux
 void calculator()
 {
@@ -53,35 +46,31 @@ void calculator()
     std::cout << answer << std::endl;
 }
 //here is calculator an extra fuction!
-void log(std::string text)
-{
-    std::cout << text << std::endl;
-}
 
 void help()
 {
-    log("--------  DELTAG help menu?!-------------");
-    log("write delete to delete a folder");
-    log("input deletef to delete everything on a folder");
-    log("write create to create a folder");
-    log("write calculate to calculate operations example: 1 enter 1 enter ÷");
-    log("write clear for clean all the console");
-    log("write exit to stop program");
-    log("write move to move file to folder example: folder/file ");
-    log("---------------------------‐--------------------------");
+    dg::log("--------  DELTAG help menu?!-------------");
+    dg::log("write delete to delete a folder");
+    dg::log("input deletef to delete everything on a folder");
+    dg::log("write create to create a folder");
+    dg::log("write calculate to calculate operations example: 1 enter 1 enter ÷");
+    dg::log("write clear for clean all the console");
+    dg::log("write exit to stop program");
+    dg::log("write move to move file to folder example: folder/file ");
+    dg::log("---------------------------‐--------------------------");
 }
 //help menu! write help to get this menu in console
 void delete_()
 { //spacework here in this func
     std::string rute = "none";
-    log("what will you delete?");
+    dg::log("what will you delete?");
     std::cin.ignore();
     std::getline(std::cin, rute);
     try
     {
         if (fs::remove(rute))
         {
-            log("file deleted succesfull ex 913");
+            dg::log("file deleted succesfull ex 913");
         }
         else
         {
@@ -90,20 +79,20 @@ void delete_()
     }
     catch (const std::exception &e)
     {
-        log("Console error: " + std::string(e.what()));
+        dg::log("Console error: " + std::string(e.what()));
     }
 } //the void that delete just a folder not all in it
 void deleteevery_()
 {
     std::string rute = "none";
-    log("what will you delete?");
+    dg::log("what will you delete?");
     std::cin.ignore();
     std::getline(std::cin, rute);
     try
     {
         if (fs::remove_all(rute))
         {
-            log("file deleted succesfull ex 913");
+            dg::log("file deleted succesfull ex 913");
         }
         else
         {
@@ -112,20 +101,20 @@ void deleteevery_()
     }
     catch (const std::exception &e)
     {
-        log("Console error: " + std::string(e.what()));
+        dg::log("Console error: " + std::string(e.what()));
     }
 } //this is the real delete it deletes everything on a folder
 void create()
 {
     std::string rute = "none";
-    log("name your repository");
+    dg::log("name your repository");
     std::cin.ignore();
     std::getline(std::cin, rute);
     try
     {
         if (fs::create_directory(rute))
         {
-            log("created succesfully");
+            dg::log("created succesfully");
         }
         else
         {
@@ -134,7 +123,7 @@ void create()
     }
     catch (const std::exception &e)
     {
-        log("Console error: " + std::string(e.what()));
+        dg::log("Console error: " + std::string(e.what()));
     }
 }
 void move()
@@ -143,17 +132,17 @@ void move()
     std::string to = "none";
     try
     {
-        log("what will you move?");
+        dg::log("what will you move?");
         std::cin.ignore();
         std::getline(std::cin, rute);
-        log("move to?");
+        dg::log("move to?");
         std::getline(std::cin, to);
         fs::rename(rute, to);
-        log("file moved succesfully ex 23");
+        dg::log("file moved succesfully ex 23");
     }
     catch (const std::exception &e)
     {
-        log("console error");
+        dg::log("console error");
     }
 }
 void run()
@@ -169,15 +158,15 @@ void run()
         {"help", help},
         {"move", move}};
 
-    log("delta gestor, in cpp (write help to get commands indications)");
+    dg::log("delta gestor, in cpp (write help to get commands indications)");
     while (t)
     {
         std::cin >> acc;
         //this is actually delete fuction in where if statements live
         if (acc == "clear")
         {
-            clear();
-            log("Deltagestor(console cleared)");
+            dg::clear();
+            dg::log("Deltagestor(console cleared)");
         }
         else if (acc == "exit")
         {
