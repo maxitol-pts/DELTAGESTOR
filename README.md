@@ -28,3 +28,13 @@ clang
 file access
 ##creators
 maxitol
+
+**DeltagBasics.h**
+
+DeltagBasics is the library of deltagestorits and wrapper-Library it has filesystem fuctions and its own fuctions (when its finished) you need to install deltagbasics as a local library if you not include deltagbasics it wont work 
+ACTUAL STATE = IN BETA
+
+**HOW TO EXECUTE DELTAGBASICS**
+first you need a folder to save the programs
+put deltagestor.cpp and deltagbasics.h 
+after that you can run perfectly the program
